@@ -1,0 +1,55 @@
+<MyCard@MDCard+RoundedRectangularElevationBehavior>:
+	padding: 16
+	size_hint: 1, None
+	height: "200dp"
+	style: "outlined"
+	line_color: "#f8f5f4"
+	md_bg_color: "#f4dedc"
+	elevation: 10
+		
+	MDRelativeLayout:
+		size_hint: None, None
+		size: root.size
+			
+		MDIconButton:
+			icon: "dots-vertical"
+			pos: root.width - (self.width + root.padding[0] + dp(4)), root.height - (self.height + root.padding[0] + dp(4))
+				
+		MDLabel:
+			id: label
+			text: "Multi\n\nLine"
+			color: .2, .2, .2, .8
+			halign: "center"
+			valign: "center"
+			text_size: self.size
+				
+				
+<TesterScreen>:
+	ScrollView:
+		do_scroll_x: False
+		do_scroll_y: True
+		effect_cls: "ScrollEffect"
+		bar_color: 1, 0, 0, 1
+		bar_margin: 4
+		bar_width: 5
+		scroll_type:["bars", "content"]
+		
+		GridLayout:
+			cols: 2
+			spacing: 8
+			padding: [20, 20]
+			size_hint_y: None
+			height: self.minimum_height
+			
+			MyCard:
+			Button:
+			MyCard:
+			Button:				
+			Button:
+			MyCard:
+			MyCard:
+			Button:
+			MyCard:
+			Button:
+			Button:
+			MyCard:

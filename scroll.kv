@@ -1,0 +1,41 @@
+ScrollView:
+	do_scroll_x: False
+	do_scroll_y: True
+	effect_cls: "ScrollEffect"
+	bar_color: 1, 0, 0, 1
+	bar_margin: 4
+	bar_width: 5
+	scroll_type:["bars", "content"]
+	padding: 0, 10
+	
+	
+	BoxLayout:
+		orientation: "vertical"
+		size_hint_y: None
+		height: self.minimum_height
+		
+		Label:
+			size_hint_y: None
+			height: self.texture_size[1]
+			text_size: self.width, None
+			padding: 0, 20
+			color: 0, 0, 0, 1
+			font_size: "35sp"
+			text: "[b]KIVY SCROLL VIEW[/b]"
+			halign: "center"
+			markup: True
+	
+		Label:
+			size_hint_y: None
+			height: self.texture_size[1]
+			text_size: self.width, None
+			padding: 15, 10
+			color: 0, 0, 0, 1
+			font_size: "22sp"
+			markup: True
+			text:"    Today being September 15, 2022, I finally got how the scroll view works after days of woory and panic because most apps I guess have scroll effects and I did not know how to go about mine since i did not know how to implement it. Thank God for today!!!\n\n    So the scroll view actually requires two arguments which are by default, True; [b]do_scroll_y[/b] and [b]do_scroll_x[/b]. In the case of this app, I made [b]do_scroll_x[/b] = False and the other True so that there can be a scroll effect for the vertical axis only and not the horizontal.\n\n    After that , I had to set some values for the 'Label' widget to ensure that longer texts are automatically fitted into the screen and not require me setting the height as text size grow. I further checked for a box layout to see if it only works for a label widget but after setting the minimum height, everthing worked perfectly well.\n\n    Other properties were also added to improve the scroll feel.\n\nProperties like:\n\n      – [b]effect_cls[/b]: ScrollEffect\n      – [b]bar_color[/b]: 1, 0, 0, 1\n      – [b]bar_margin[/b]: 5\n      – [b]scroll_type[/b]: ['bars', 'content']\n\nto enable scrolling from both the content and the scroll bar"
+			
+		Button:
+			size_hint: .5, None
+			height: root.height/4
+			pos_hint: {"center_x": .5, "center_y": .5}
